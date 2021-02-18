@@ -1,0 +1,26 @@
+
+/***** CREATION DES TABLES *****/
+
+DROP TABLE Users;
+
+
+CREATE TABLE Users (
+loginUser CHAR VARYING(20) UNIQUE
+CONSTRAINT PK_Users PRIMARY KEY,
+firstname CHAR VARYING(20),
+lastname CHAR VARYING(20),
+birth DATE NOT NULL,
+mailUser CHAR VARYING(40) NOT NULL
+CONSTRAINT DOM_mailUser CHECK (mailUser LIKE '%@%'),
+phoneUser CHAR VARYING (12) NOT NULL
+password TEXT NOT NULL UNIQUE
+);
+
+
+
+/*
+INSERT INTO Users VALUES (""); 
+
+
+
+
